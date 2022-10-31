@@ -1,10 +1,11 @@
 import React, { Component } from 'react'
 
-export default class Project extends Component {
+class Project extends Component {
   state = {
     showInfo: false,
   }
   handleInfo = () => {
+    console.log(Project)
     this.setState({
       showInfo: !this.state.showInfo,
     })
@@ -51,3 +52,4 @@ export default class Project extends Component {
     )
   }
 }
+export default Project

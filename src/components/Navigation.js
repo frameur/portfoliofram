@@ -13,41 +13,25 @@ const Navigation = () => {
       <div className="navigation">
         <ul>
           <li>
-            <NavLink
-              exact
-              to="/"
-              ClassName={(nav) => (nav.isActive ? 'nav-active' : '')}
-            >
+            <NavLink to="/" ClassName="navActive">
               <i className="fas fa-home"></i>
               <span>Accueil</span>
             </NavLink>
           </li>
           <li>
-            <NavLink
-              exact
-              to="/competences"
-              ClassName={(nav) => (nav.isActive ? 'nav-active' : '')}
-            >
+            <NavLink to="/competences" ClassName="navActive">
               <i className="fas fa-mountain"></i>
               <span>Compétences</span>
             </NavLink>
           </li>
           <li>
-            <NavLink
-              exact
-              to="/portfolio"
-              ClassName={(nav) => (nav.isActive ? 'nav-active' : '')}
-            >
+            <NavLink to="/portfolio" ClassName="navActive">
               <i className="fas fa-images"></i>
               <span>Portfolio</span>
             </NavLink>
           </li>
           <li>
-            <NavLink
-              exact
-              to="/contact"
-              ClassName={(nav) => (nav.isActive ? 'nav-active' : '')}
-            >
+            <NavLink to="/contact" ClassName="navActive">
               <i className="fas fa-address-book"></i>
               <span>Contact</span>
             </NavLink>

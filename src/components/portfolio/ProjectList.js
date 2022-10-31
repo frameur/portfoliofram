@@ -1,52 +1,53 @@
 import React, { Component } from 'react'
+import { portfolioData } from '../../data/portfolioData'
+import Project from './Project'
 
-export default class Project extends Component {
+export default class ProjectList extends Component {
   state = {
-    showInfo: false,
+    projects: portfolioData,
+    radios: [
+      { id: 1, value: 'javascript' },
+      { id: 2, value: 'css' },
+      { id: 3, value: 'reactjs' },
+      { id: 4, value: 'vuejs' },
+      { id: 5, value: 'mysql' },
+      { id: 6, value: 'mongodb' },
+      { id: 7, value: 'sketchbook' },
+    ],
+    selectedRadio: 'css',
   }
-  handleInfo = () => {
-    this.setState({
-      showInfo: !this.state.showInfo,
-    })
+  handleRadio = (event) => {
+    let radio = event.target.value
+    this.setState({ selectedRadio: radio })
   }
-
   render() {
-    let { name, languagesIcons, source, info, picture } = this.props.item
+    let { projects, radios, selectedRadio } = this.state
     return (
-      <div className="project">
-        <div className="icons">
-          {languagesIcons.map((icon) => (
-            <i className={icon} key={icon}></i>
-          ))}
+      <div className="portfolioContent">
+        <ul className="radioDisplay">
+          {radios.map((radio) => {
+            return (
+              <li key={radio.id}>
+                <input
+                  type="radio"
+                  name="radio"
+                  checked={radio.value === selectedRadio}
+                  value={radio.value}
+                  id={radio.value}
+                  onChange={this.handleRadio}
+                />
+                <label htmlFor={radio.value}>{radio.value}</label>
+              </li>
+            )
+          })}
+        </ul>
+        <div className="projects">
+          {projects
+            .filter((item) => item.languages.includes(selectedRadio))
+            .map((item) => {
+              return <Project key={item.id} item={item} />
+            })}
         </div>
-        <h3>{name}</h3>
-        <img src={picture} alt="" onClick={this.handleInfo} />
-        {/* <span className="infos" onClick={this.handleInfo}>
-          <i className="fas fa-plus-circle"></i>
-        </span> */}
-        {this.state.showInfo && (
-          <div className="showInfos">
-            <div className="infosContent">
-              <div className="head">
-                <h2>{name}</h2>
-                <div className="sourceCode">
-                  <a
-                    href={source}
-                    rel="noopener noreferrer"
-                    className="button"
-                    target="_blank"
-                  >
-                    Voir +
-                  </a>
-                </div>
-              </div>
-              <p className="text">{info}</p>
-              <div className="button return" onClick={this.handleInfo}>
-                Retour
-              </div>
-            </div>
-          </div>
-        )}
       </div>
     )
   }
