@@ -35,7 +35,13 @@ export const portfolioData = [
     id: 3,
     name: 'Monty python',
     languages: ['javascript', 'css'],
-    languagesIcons: ['fab fa-js', 'fab fa-css3-alt', 'fab fa-html5'],
+    languagesIcons: [
+      'fab fa-js',
+      'fab fa-css3-alt',
+      'fab fa-html5',
+      'fab fa-sass',
+      'fab fa-react',
+    ],
     source: 'https://projetmonty.netlify.app/',
     // source: "http://www.github.com",
     info:
@@ -47,12 +53,7 @@ export const portfolioData = [
     id: 4,
     name: 'Hans Hartung',
     languages: ['css'],
-    languagesIcons: [
-      'fab fa-js',
-      'fab fa-css3-alt',
-      'fab fa-html5',
-      'fab fa-react',
-    ],
+    languagesIcons: ['fab fa-js', 'fab fa-css3-alt', 'fab fa-html5'],
     source: 'https://projetart.netlify.app/',
     info: "J'ai découvert Hans Hartung lors de mes cours de dessin.",
     picture: './media/hanshartung.png',
@@ -108,7 +109,7 @@ export const portfolioData = [
       'fab fa-react',
     ],
     source: 'https://react-api-restcountries.netlify.app/',
-    info: 'API countries avec REACTJS avec le module AXIOS.',
+    info: 'API countries avec REACTJS avec AXIOS.',
     picture: './media/reactcountries.png',
   },
   {
