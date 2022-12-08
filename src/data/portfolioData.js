@@ -47,7 +47,7 @@ export const portfolioData = [
     info:
       "Fan des Monty python, donc un projet plutôt autour de la dérision. front-end avec REACTJS, pour le slide j'ai utilisé la librairie swiper. page media API film.",
     // info: "Projet en cours de modification. ",
-    picture: './media/montypython.png',
+    picture: './media/montymedia.png',
   },
   {
     id: 4,
